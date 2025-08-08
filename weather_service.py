@@ -26,7 +26,7 @@ class WeatherInfo:
 class WeatherService:
     """Service class to interact with Weatherstack API"""
     
-    def __init__(self, api_key: str = "b3d490c8de0e3ede82dea4a6a3978603"):
+    def __init__(self, api_key: str):
         """
         Initialize the weather service with API key
         

@@ -9,7 +9,7 @@ load_dotenv()
 
 mcp = FastMCP("mcp-server")
 client = TavilyClient(os.getenv("TAVILY_API_KEY"))
-weather_service = WeatherService()
+weather_service = WeatherService(os.getenv("WEATHER_API_KEY"))
 
 @mcp.tool()
 def web_search(query: str) -> str:
@@ -23,9 +23,6 @@ def roll_dice(notation: str, num_rolls: int = 1) -> str:
     roller = DiceRoller(notation, num_rolls)
     return str(roller)
 
-"""
-Add your own tool here, and then use it through Cursor!
-"""
 @mcp.tool()
 def weather_search(city_name: str) -> str:
     """Get current weather information for a city using the Weatherstack API"""

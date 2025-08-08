@@ -9,9 +9,10 @@ This project is a demonstration of the MCP (Model Context Protocol) server, whic
 
 ## Project Overview
 
-The MCP server is set up to handle web search queries using the Tavily API. It is built with the following key components:
+The MCP server is set up to handle web search queries using the Tavily API and weather information using the Weatherstack API. It is built with the following key components:
 
 - **TavilyClient**: A client for interacting with the Tavily API to perform web searches.
+- **WeatherService**: A service for fetching current weather information for cities worldwide.
 
 ## Prerequisites
 
@@ -76,7 +77,24 @@ The server will start and listen for commands via standard input/output.
 
 ## Usage
 
-The server provides a `web_search` tool that can be used to search the web for information about a given query. This is achieved by calling the `web_search` function with the desired query string.
+The server provides several tools:
+
+- **`web_search`**: Search the web for information about a given query using the Tavily API
+- **`roll_dice`**: Roll dice with specified notation (e.g., "2d6", "1d20")
+- **`weather_search`**: Get current weather information for a city using the Weatherstack API
+
+### Example Usage
+
+```python
+# Web search
+web_search("latest AI developments")
+
+# Roll dice
+roll_dice("2d6", 3)  # Roll 2 six-sided dice 3 times
+
+# Weather search
+weather_search("New York")
+```
 
 ## Activities: 
 
